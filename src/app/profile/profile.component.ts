@@ -58,6 +58,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  resetPageSize(){
+    this.pageSize =10;
+  }
+
   ngOnInit(): void {
     this.activated.queryParams.subscribe((response: any) => {
       this.profileName = response['username'];

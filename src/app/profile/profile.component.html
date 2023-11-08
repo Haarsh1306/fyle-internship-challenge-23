@@ -134,6 +134,9 @@
         <button
           class="bg-gradient-to-r from-primary-pink to-primary-yellow  text-white text-xs rounded-2xl px-4 font-montserrat py-2 mx-4 hover: transition-all duration-200 ease-in-out transform hover:scale-105"
           (click)="changePageSize()">Change</button>
+        <button *ngIf="pageSize!=10"
+          class="bg-gradient-to-r from-primary-pink to-primary-yellow  text-white text-xs rounded-2xl px-4 font-montserrat py-2 hover: transition-all duration-200 ease-in-out transform hover:scale-105"
+          (click)="resetPageSize()">Reset</button>
       </div>
       <div *ngIf="popUp" class="mt-6 flex flex-col items-center justify-center">
         <p class="text-xl mb-2 text-textCol font-montserrat">Choose between 10-100</p>
