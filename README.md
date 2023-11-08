@@ -20,6 +20,8 @@ The `MainPageComponent` provides a form to input a GitHub username. Upon submiss
 
 The `ProfileComponent` displays detailed information about a GitHub user, including their name, bio, location, Twitter handle, and public repositories. It also allows you to paginate through the user's repositories.
 
+Implemented Skeleton loader as mentioned in the requirement using Tailwind Css. Also added the functionality in which user can change how many repo they want to see per page.
+
 ## Unit Testing and Code Coverage
 
 Unit testing is an integral part of this project to ensure code quality and functionality. I have done unit testing only for main-page component. Don't have much knowlege of testing yet. Will try to add more test cases in future.
