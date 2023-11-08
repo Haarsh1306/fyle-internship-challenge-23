@@ -15,13 +15,17 @@ export class MainPageComponent {
   constructor(private router: Router , private activatedRoute : ActivatedRoute, private apiService: ApiService){}
   username:string="";
   userFound:boolean = true;
+  userInput:boolean=false;
 
   onClick(){
-    this.apiService.getUser(this.username)
+    if(this.username=="") this.userInput=true;
+    else{
+      this.apiService.getUser(this.username)
         .pipe(
           catchError((error: any) => {
             if (error.status === 404) {
               this.userFound = false;
+              this.userInput=false;
             }
             else this.userFound=true;
             return throwError(error);
@@ -30,6 +34,8 @@ export class MainPageComponent {
         .subscribe((response: any) => {
           this.router.navigate(['profile'], {skipLocationChange: true, queryParams:{username : this.username}})
         });
+    }
+    
 
   }
 }
