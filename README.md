@@ -24,7 +24,7 @@ Implemented Skeleton loader as mentioned in the requirement using Tailwind Css. 
 
 ## Unit Testing and Code Coverage
 
-Unit testing is an integral part of this project to ensure code quality and functionality. I have done unit testing only for main-page component. Don't have much knowlege of testing yet. Will try to add more test cases in future.
+Unit testing is an integral part of this project to ensure code quality and functionality. I have tried to write unit testing only for main-page component and services. Don't have much knowlege of testing yet. Will try to add more test cases in future.
 To run unit tests and measure code coverage:
 
 - Make sure you have the Angular CLI installed.
