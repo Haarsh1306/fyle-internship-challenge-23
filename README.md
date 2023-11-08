@@ -1,43 +1,27 @@
-# Fyle Frontend Challenge
+# Angular Front End Development Project
 
-## Who is this for?
+This repository contains an Angular project submitted in Fyle Internship challenge 2k23. The project includes various components and screens, each serving a specific purpose. Below, you'll find an overview of the project's main components:
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. The candidate should be able to commit to at least 6 months of dedicated time for internship.
+## Components
 
-## Why work at Fyle?
+### Welcome Screen
+The `WelcomeScreenComponent` displays a welcome message and a "Get Started" button. Clicking the button will navigate to the main page.
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
+### Navbar
+The `NavbarComponent` represents the project's navigation bar, displaying the project name and logo.
 
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
+### Main Page
+The `MainPageComponent` provides a form to input a GitHub username. Upon submission, it retrieves user data and handles error conditions, including user not found.
 
-## Challenge outline
+### Profile
+The `ProfileComponent` displays detailed information about a GitHub user, including their name, bio, location, Twitter handle, and public repositories. It also allows you to paginate through the user's repositories.
 
-This challenge involves implementing application using github api. 
+## Unit Testing and Code Coverage
 
-The services that you need to use are already implemented - check out ApiService.
-
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
-
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
-
-## What happens next?
-
-You will hear back within 48 hours from us via email.
-
-## Installation
-
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
-
-### Install requirements
-* Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Further help
-
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+Unit testing is an integral part of this project to ensure code quality and functionality. I have done unit testing only for main-page component. Don't have much knowlege of testing yet. Will try to add more test cases in future.
+To run unit tests and measure code coverage:
+- Make sure you have the Angular CLI installed.
+- Install project dependencies using `npm install`.
+- Run unit tests with code coverage using the following command:
+  ```bash
+  ng test --code-coverage
