@@ -154,6 +154,11 @@
           class=" disabled:cursor-not-allowed bg-gradient-to-r from-primary-pink to-primary-yellow  text-white text-xs rounded-2xl px-4 font-montserrat py-2 hover: transition-all duration-200 ease-in-out transform hover:scale-105"
           [disabled]="currentPage === totalPages" (click)="setPage(currentPage + 1)">Next</button>
       </div>
+      <div class="mt-8 flex items-center justify-center">
+        <button (click)="fetchNext()"
+          class="bg-gradient-to-r from-primary-pink to-primary-yellow  text-white text-xl rounded-2xl px-4 font-montserrat py-2 hover: transition-all duration-200 ease-in-out transform hover:scale-105">Fetch
+          for Another Profile</button>
+      </div>
     </div>
   </div>
 </ng-template>

@@ -61,6 +61,9 @@ export class ProfileComponent implements OnInit {
   resetPageSize(){
     this.pageSize =10;
   }
+  fetchNext(){
+    this.router.navigate(['main-page']);
+  }
 
   ngOnInit(): void {
     this.activated.queryParams.subscribe((response: any) => {
