@@ -5,19 +5,20 @@
     </div>
 
     <div class="mx-5 flex flex-col justify-center items-center">
-      <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
-        <div class="form-group">
+      <form #loginForm="ngForm">
+        <div class=" form-group">
           <label class="text-2xl font-montserrat" for="username">Username</label>
-          <input #name="ngModel" required class="text-2xl font-montserrat mt-3 rounded-xl form-control"
-            [(ngModel)]="username" name="username" type="text" placeholder="Enter a valid Github Username">
+          <input #name="ngModel" required class="text-2xl px-4 font-montserrat mt-3 rounded-xl form-control"
+            [(ngModel)]="username" name="username" type="text" placeholder="Enter valid Username">
         </div>
 
-        <div class="flex justify-center"> <!-- Center the button using 'flex' and 'justify-center' -->
-          <button
+        <div class="flex justify-center">
+          <button (click)="onClick()"
             class="bg-pink-500 text-1xl rounded-2xl p-4 font-montserrat font-bold m-5 hover:bg-pink-600 transition-all duration-200 ease-in-out transform hover:scale-105"
             type="submit">Submit</button>
         </div>
       </form>
     </div>
+    <p class="text-xl font-montserrat" *ngIf="!userFound"> User Not Found</p>
   </div>
 </div>

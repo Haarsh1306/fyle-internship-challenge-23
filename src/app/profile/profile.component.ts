@@ -24,6 +24,10 @@ export class ProfileComponent implements OnInit {
   userRepoData: any[] = []; 
   pageSize: number = 10; 
   currentPage: number = 1; 
+  isLoading:boolean=true;
+  popUp:boolean=false;
+  userPageSize:number=10;
+
 
  
   get totalPages(): number {
@@ -34,6 +38,7 @@ export class ProfileComponent implements OnInit {
   setPage(page: number) {
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;
+      if(this.popUp) this.popUp=false;
     }
   }
 
@@ -44,20 +49,20 @@ export class ProfileComponent implements OnInit {
     return this.userRepoData.slice(startIndex, endIndex);
   }
 
+  changePageSize(){
+    if(this.popUp==false) this.popUp=true;
+    else{
+      this.pageSize = this.userPageSize;
+      this.popUp=false;
+    }
+  }
+
   ngOnInit(): void {
     this.activated.queryParams.subscribe((response: any) => {
       this.profileName = response['username'];
     });
 
     this.apiService.getUser(this.profileName)
-        .pipe(
-          catchError((error: any) => {
-            if (error.status === 404) {
-              this.profileNotFound = true;
-            }
-            return throwError(error);
-          })
-        )
         .subscribe((response: any) => {
           this.githubResponse = response;
           this.avatarUrl = this.githubResponse['avatar_url'];
@@ -66,10 +71,14 @@ export class ProfileComponent implements OnInit {
           this.userLocation = this.githubResponse["location"];
           this.userTwitter = this.githubResponse["twitter_username"];
           if (this.userTwitter == null) this.userTwitterAvailable = false;
+          
         });
 
     this.apiService.getUserRepos(this.profileName).subscribe((response: any) => {
       this.userRepoData = response;
+      this.isLoading = false;
     });
+
+    
   }
 }
