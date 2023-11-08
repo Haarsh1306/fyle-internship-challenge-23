@@ -18,7 +18,10 @@ export class MainPageComponent {
   userInput:boolean=false;
 
   onClick(){
-    if(this.username=="") this.userInput=true;
+    if(this.username==""){
+      this.userFound=false;
+      this.userInput=true;
+    }
     else{
       this.apiService.getUser(this.username)
         .pipe(
