@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
     this.pageSize =10;
   }
   fetchNext(){
-    this.router.navigate(['main-page']);
+    this.router.navigate(['main-page'],{skipLocationChange:true});
   }
 
   ngOnInit(): void {
