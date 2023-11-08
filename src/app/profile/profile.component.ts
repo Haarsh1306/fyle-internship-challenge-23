@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
   isLoading:boolean=true;
   popUp:boolean=false;
   userPageSize:number=10;
+  totalPublicRepo:number=0;
 
 
  
@@ -76,6 +77,7 @@ export class ProfileComponent implements OnInit {
 
     this.apiService.getUserRepos(this.profileName).subscribe((response: any) => {
       this.userRepoData = response;
+      this.totalPublicRepo = this.userRepoData.length;
       this.isLoading = false;
     });
 

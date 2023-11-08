@@ -2,7 +2,7 @@
   <div class="animate-pulse flex flex-col items-center justify-center mt-14 ">
     <!-- Profile -->
     <div class="flex items-center">
-      <div class=" rounded-full bg-slate-700 h-36 w-36"></div>
+      <div class=" rounded-full bg-slate-700 h-44 w-44"></div>
       <div class="flex-1 space-y-6 py-1 ml-6">
         <div class="h-6 bg-slate-700 rounded-lg"></div>
         <div class="space-y-3 w-40">
@@ -13,6 +13,8 @@
           </div>
           <div class="h-2 bg-slate-700 rounded"></div>
           <div class="h-2 bg-slate-700 rounded"></div>
+          <div class="h-2 bg-slate-700 rounded"></div>
+
         </div>
       </div>
     </div>
@@ -73,7 +75,7 @@
 <ng-template #dataSection class="">
   <div class="flex flex-col p-10 justify-center items-center ">
     <div class="flex mt-14 items-center">
-      <div class="rounded-full h-36 w-36 flex-shrink-0 overflow-hidden">
+      <div class="rounded-full h-44 w-44 flex-shrink-0 overflow-hidden">
         <img [src]="avatarUrl" alt="User Avatar" class="object-cover h-full w-full">
       </div>
       <div class="ml-6">
@@ -98,11 +100,14 @@
           https://twitter.com/{{userTwitter}}</a>
 
         <p *ngIf="!userTwitterAvailable" class="text-xl font-montserrat">Twitter : Not Available</p>
+        <p class="text-xl font-montserrat">
+          Total Public Repo Available - {{totalPublicRepo}}
+        </p>
         <a class="text-xl font-montserrat" href="https://github.com/{{profileName}}">&#x27A2; Github</a>
       </div>
     </div>
-    <!-- For repos -->
 
+    <!-- For repos -->
     <div class="grid grid-cols-2 gap-x-20 gap-y-12 mt-12">
       <div *ngFor="let item of pagedUserRepoData; index as i"
         class="max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
