@@ -19,7 +19,7 @@ export class MainPageComponent {
 
   onClick(){
     if(this.username==""){
-      this.userFound=false;
+      this.userFound=true;
       this.userInput=true;
     }
     else{
