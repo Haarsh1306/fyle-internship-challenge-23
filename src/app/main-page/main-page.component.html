@@ -1,13 +1,14 @@
 <div class=" flex justify-center items-center">
-  <div class="w-80 mt-36 flex flex-col justify-center items-center shadow-lg rounded-2xl bg-gray-400">
+  <div
+    class="w-88 mt-36 flex flex-col justify-center items-center  bg-card-bg-color border-card-border-color border-2  hover:shadow-xl transition-all duration-200 ease-in-out transform hover:scale-105 shadow-card-shadow-color shadow-md rounded-lg">
     <div class="header">
-      <h1 class="text-center text-3xl font-montserrat m-10 font-bold">Github Profile</h1>
+      <h1 class="text-center text-3xl text-white font-montserrat m-10 font-bold">Github Profile</h1>
     </div>
 
-    <div class="mx-5 flex flex-col justify-center items-center">
+    <div class="mx-5 px-5 flex flex-col justify-center items-center">
       <form #loginForm="ngForm">
-        <div class=" form-group">
-          <label class="text-2xl font-montserrat" for="username">Username</label>
+        <div class=" flex flex-col form-group">
+          <label class="text-2xl text-textCol font-montserrat" for="username">Enter Username : </label>
           <input #name="ngModel" required
             class="text-2xl px-4 font-montserrat mt-3 py-1 rounded-xl form-control focus:border-cyan-400"
             [(ngModel)]="username" name="username" type="text" placeholder="Enter valid Username">
@@ -20,8 +21,8 @@
         </div>
       </form>
     </div>
-    <p class="text-xl pb-2 font-montserrat" *ngIf="!userFound"> User Not Found</p>
-    <p class="text-xl pb-2 font-montserrat" *ngIf="userInput"> Please enter username</p>
+    <p class="text-xl pb-2 text-textCol font-montserrat" *ngIf="!userFound"> User Not Found</p>
+    <p class="text-xl pb-2 text-textCol font-montserrat" *ngIf="userInput"> Please enter username</p>
 
   </div>
 </div>

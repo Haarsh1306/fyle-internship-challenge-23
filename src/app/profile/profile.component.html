@@ -136,9 +136,10 @@
           (click)="changePageSize()">Change</button>
       </div>
       <div *ngIf="popUp" class="mt-6 flex flex-col items-center justify-center">
-        <p class="text-xl text-textCol font-montserrat">Choose between 10-100</p>
-        <input type="range" min="10" max="100" [(ngModel)]="userPageSize" class="w-80  h-2 rounded " />
-        <p class="text-xl text-textCol font-montserrat">Selected Value : {{userPageSize}} Click on change again to save
+        <p class="text-xl mb-2 text-textCol font-montserrat">Choose between 10-100</p>
+        <input type="range" min="10" max="100" [(ngModel)]="userPageSize" class="w-80  h-2 mb-2 rounded " />
+        <p class="text-xl text-textCol font-montserrat">Selected Value - {{userPageSize}}. Click on change button again
+          to save
         </p>
       </div>
       <div class="mt-6 flex justify-center items-center">
